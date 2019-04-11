@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <fragment  th:replace="layout :: site-head"></fragment>
+    <title>The Technical Blog</title>
+</head>
+<body>
+    <fragment th:replace="layout :: logged-out"></fragment>
+    <h1>Sample page</h1>
+    <thymeleaf th:each="post : ${posts}">
+        <article>
+            <h2 th:text="${post.title}"></h2>
+            <i>Created at : </i><span th:text="${post.date}"></span>
+            <p th:text="${post.body}"></p>
+        </article>
+    </thymeleaf>
+</body>
+</html>

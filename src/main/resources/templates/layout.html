@@ -1,0 +1,19 @@
+<fragments xmlns:th="http://thymeleaf.org">
+    <thymeleaf th:fragment="site-head" th:remove="tag">
+        <meta charset="UTF-8" />
+    </thymeleaf>
+    <thymeleaf th:fragment="logged-out" th:remove="tag">
+        <header>
+            <a th:href="@{user/login}">Login</a>
+            <a th:href="@{user/register}">Register</a>
+        </header>
+    </thymeleaf>
+    <thymeleaf th:fragment="logged-in" th:remove="tag">
+        <header>
+            Hi user
+            <form method="post" th:action="@{user/logout}">
+                <input type="submit" value="Logout" />
+            </form>
+        </header>
+    </thymeleaf>
+</fragments>
